@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE cardapio SYSTEM "definicoes.dtd">
+<cardapio>
+    <prato id="p1">
+        <nome>Frango Grelhado com Arroz</nome>
+        <descricao>Peito de frango temperado, grelhado e servido com arroz soltinho</descricao>
+        <ingredientes>
+            <ingrediente>Peito de frango</ingrediente>
+            <ingrediente>Arroz</ingrediente>
+            <ingrediente>Alho</ingrediente>
+            <ingrediente>Cebola</ingrediente>
+            <ingrediente>Óleo</ingrediente>
+            <ingrediente>Sal</ingrediente>
+            <ingrediente>Pimenta</ingrediente>
+            <ingrediente>Cheiro-verde</ingrediente> 
+        </ingredientes>
+        <preco moeda="BRL">&reais; 18.00</preco>
+        <calorias>520</calorias>
+        <tempoPreparo>30 min</tempoPreparo> 
+    </prato>
+
+    <prato id="p2">
+        <nome>Macarrão ao Alho e Óleo</nome>
+        <descricao>Massa leve e prática, finalizada com alho dourado e ervas</descricao>
+        <ingredientes>
+            <ingrediente>Macarrão espaguete</ingrediente>
+            <ingrediente>Alho</ingrediente>
+            <ingrediente>Azeite</ingrediente>
+            <ingrediente>Sal</ingrediente>
+            <ingrediente>Pimenta</ingrediente>
+            <ingrediente>Salsinha</ingrediente>             
+        </ingredientes>
+        <preco moeda="BRL">&reais; 16.00</preco>
+        <calorias>430</calorias>
+        <tempoPreparo>20 min</tempoPreparo>
+    </prato>
+
+    <prato id="p3">
+        <nome>Omelete de Queijo e Tomate</nome>
+        <descricao>Omelete macia com recheio simples e saboroso</descricao>
+        <ingredientes>
+            <ingrediente>Ovos</ingrediente>
+            <ingrediente>Queijo muçarela</ingrediente>
+            <ingrediente>Tomate</ingrediente>
+            <ingrediente>Cebola</ingrediente>
+            <ingrediente>Sal</ingrediente>
+            <ingrediente>Pimenta</ingrediente>
+            <ingrediente>Manteiga</ingrediente> 
+        </ingredientes>
+        <preco moeda="BRL">&reais; 14.00</preco>
+        <calorias>350</calorias>
+        <tempoPreparo>15 min</tempoPreparo>
+    </prato> 
+
+    <prato id="p4">
+        <nome>Filé de Peixe com Purê</nome>
+        <descricao>Filé de peixe grelhado servido com purê de batata cremoso</descricao>
+        <ingredientes>
+            <ingrediente>Filé de peixe</ingrediente>
+            <ingrediente>Batata</ingrediente>
+            <ingrediente>Leite</ingrediente>
+            <ingrediente>Manteiga</ingrediente>
+            <ingrediente>Alho</ingrediente>
+            <ingrediente>Sal</ingrediente>
+            <ingrediente>Limão</ingrediente> 
+        </ingredientes>
+        <preco moeda="BRL">&reais; 20.00</preco>
+        <calorias>480</calorias>
+        <tempoPreparo>35 min</tempoPreparo> 
+    </prato>
+
+    <prato id="p5">
+        <nome>Salada de Frango com Legumes</nome>
+        <descricao>Opção leve com frango desfiado e legumes frescos</descricao>
+        <ingredientes>
+            <ingrediente>Frango desfiado</ingrediente>
+            <ingrediente>Alface</ingrediente>
+            <ingrediente>Cenoura</ingrediente>
+            <ingrediente>Tomate</ingrediente>
+            <ingrediente>Milho</ingrediente>
+            <ingrediente>Azeite</ingrediente>
+            <ingrediente>Sal</ingrediente>
+            <ingrediente>Limão</ingrediente> 
+        </ingredientes>
+        <preco moeda="BRL">&reais; 17.00</preco>
+        <calorias>290</calorias>
+        <tempoPreparo>20 min</tempoPreparo>
+    </prato>
+</cardapio>
