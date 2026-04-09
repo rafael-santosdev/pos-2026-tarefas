@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE quiz SYSTEM "quiz.dtd">
+<quiz versao="1.0">
+    <disciplina>Matemática</disciplina>
+    <professor>
+        <nome>Gabriel Garcia</nome>
+    </professor>
+    <turma>2º Ano B</turma>
+    <data>2026-04-08</data>
+
+    <questões>
+        <questão>
+            <enunciado>Quanto é 7 + 6?</enunciado>
+            <pontuação>5</pontuação>
+            <alternativas>
+                <alternativa correta="nao">11</alternativa>
+                <alternativa correta="sim">13</alternativa>
+                <alternativa correta="nao">12</alternativa>
+                <alternativa correta="nao">14</alternativa>
+            </alternativas>
+        </questão>
+
+        <questão>
+            <enunciado>Qual é o resultado de 20 - 8?</enunciado>
+            <pontuação>5</pontuação>
+            <alternativas>
+                <alternativa correta="nao">10</alternativa>
+                <alternativa correta="sim">12</alternativa>
+                <alternativa correta="nao">14</alternativa>
+                <alternativa correta="nao">9</alternativa>
+            </alternativas>
+        </questão>
+
+        <questão>
+            <enunciado>Quanto é 4 vezes 2?</enunciado>
+            <pontuação>5</pontuação>
+            <alternativas>
+                <alternativa correta="nao">6</alternativa>
+                <alternativa correta="nao">10</alternativa>
+                <alternativa correta="sim">8</alternativa>
+                <alternativa correta="nao">12</alternativa>
+            </alternativas>
+        </questão>
+
+        <questão>
+            <enunciado>Qual é a metade de 18?</enunciado>
+            <pontuação>5</pontuação>
+            <alternativas>
+                <alternativa correta="nao">8</alternativa>
+                <alternativa correta="sim">9</alternativa>
+                <alternativa correta="nao">6</alternativa>
+                <alternativa correta="nao">7</alternativa>
+            </alternativas>
+        </questão>
+
+        <questão>
+            <enunciado>Quanto é 15 dividido por 5?</enunciado>
+            <pontuação>5</pontuação>
+            <alternativas>
+                <alternativa correta="nao">2</alternativa>
+                <alternativa correta="sim">3</alternativa>
+                <alternativa correta="nao">4</alternativa>
+                <alternativa correta="nao">5</alternativa>
+            </alternativas>
+        </questão>
+    </questões>
+</quiz>

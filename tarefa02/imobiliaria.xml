@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE imobiliaria [
+<!ELEMENT imobiliaria (imovel+)>
+<!ELEMENT imovel (descricao, proprietario, endereco, caracteristicas, valor)>
+<!ELEMENT descricao (#PCDATA)>
+<!ELEMENT proprietario (nome, (email | telefone)+)>
+<!ELEMENT nome (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT telefone (#PCDATA)>
+<!ELEMENT endereco (rua, bairro, cidade, numero?)>
+<!ELEMENT rua (#PCDATA)>
+<!ELEMENT bairro (#PCDATA)>
+<!ELEMENT cidade (#PCDATA)>
+<!ELEMENT numero (#PCDATA)>
+<!ELEMENT caracteristicas (tamanho, numQuartos, numBanheiros)>
+<!ELEMENT tamanho (#PCDATA)>
+<!ELEMENT numQuartos (#PCDATA)>
+<!ELEMENT numBanheiros (#PCDATA)>
+<!ELEMENT valor (#PCDATA)>
+]>
+
+<imobiliaria>
+    <imovel>
+        <descricao>Casa confortável com quintal espaçoso e área para churrasco</descricao>
+        <proprietario>
+            <nome>André Luiz Pereira</nome>
+            <telefone>98112-3456</telefone>
+            <telefone>98743-2109</telefone>
+            <email>andre.pereira@email.com</email>
+        </proprietario>
+        <endereco>
+            <rua>Rua das Mangueiras</rua>
+            <bairro>Nova Descoberta</bairro>
+            <cidade>Natal</cidade>
+            <numero>152</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>210m²</tamanho>
+            <numQuartos>4</numQuartos>
+            <numBanheiros>3</numBanheiros>
+        </caracteristicas>
+        <valor>465000</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Apartamento bem iluminado, perto de farmácia, mercado e ponto de ônibus</descricao>
+        <proprietario>
+            <nome>Mariana Souza Alves</nome>
+            <telefone>98954-7781</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Avenida Lima e Silva</rua>
+            <bairro>Lagoa Nova</bairro>
+            <cidade>Natal</cidade>
+        </endereco>
+        <caracteristicas>
+            <tamanho>88m²</tamanho>
+            <numQuartos>2</numQuartos>
+            <numBanheiros>2</numBanheiros>
+        </caracteristicas>
+        <valor>298000</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Casa simples e aconchegante, ideal para família pequena</descricao>
+        <proprietario>
+            <nome>Carlos Henrique Gomes</nome>
+            <telefone>97661-8820</telefone>
+            <email>carloshg@email.com</email>
+        </proprietario>
+        <endereco>
+            <rua>Rua São Vicente</rua>
+            <bairro>Planalto</bairro>
+            <cidade>Natal</cidade>
+            <numero>74</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>135m²</tamanho>
+            <numQuartos>3</numQuartos>
+            <numBanheiros>2</numBanheiros>
+        </caracteristicas>
+        <valor>215000</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Apartamento compacto em região central, bom para morar ou investir</descricao>
+        <proprietario>
+            <nome>Juliana Medeiros Costa</nome>
+            <telefone>98440-1198</telefone>
+            <email>juliana.medeiros@email.com</email>
+        </proprietario>
+        <endereco>
+            <rua>Rua Apodi</rua>
+            <bairro>Tirol</bairro>
+            <cidade>Natal</cidade>
+            <numero>233</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>62m²</tamanho>
+            <numQuartos>1</numQuartos>
+            <numBanheiros>1</numBanheiros>
+        </caracteristicas>
+        <valor>172000</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Casa ampla com varanda, jardim na frente e ótima ventilação</descricao>
+        <proprietario>
+            <nome>Roberto Fernandes Lima</nome>
+            <telefone>97555-4433</telefone>
+            <telefone>97123-8890</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Rua das Oliveiras</rua>
+            <bairro>Candelária</bairro>
+            <cidade>Natal</cidade>
+        </endereco>
+        <caracteristicas>
+            <tamanho>275m²</tamanho>
+            <numQuartos>4</numQuartos>
+            <numBanheiros>3</numBanheiros>
+        </caracteristicas>
+        <valor>640000</valor>
+    </imovel>
+</imobiliaria>
