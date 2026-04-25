@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:q="http://quiz.org"
+           targetNamespace="http://quiz.org"
+           elementFormDefault="qualified">
+
+    <xs:simpleType name="respostaCorreta">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="sim"/>
+            <xs:enumeration value="nao"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="dadosProfessor">
+        <xs:sequence>
+            <xs:element name="nome" type="xs:string"/>
+            <xs:element name="matrícula" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="opcaoResposta">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="correta" type="q:respostaCorreta" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="listaAlternativas">
+        <xs:sequence>
+            <xs:element name="alternativa" type="q:opcaoResposta" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="perguntaDoQuiz">
+        <xs:sequence>
+            <xs:element name="enunciado" type="xs:string"/>
+            <xs:element name="pontuação" type="xs:string"/>
+            <xs:element name="alternativas" type="q:listaAlternativas"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="listaQuestoes">
+        <xs:sequence>
+            <xs:element name="questão" type="q:perguntaDoQuiz" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="quiz">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="disciplina" type="xs:string"/>
+                <xs:element name="professor" type="q:dadosProfessor"/>
+                <xs:element name="turma" type="xs:string"/>
+                <xs:element name="data" type="xs:string"/>
+                <xs:element name="questões" type="q:listaQuestoes"/>
+            </xs:sequence>
+
+            <xs:attribute name="versao" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

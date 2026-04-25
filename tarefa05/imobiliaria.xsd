@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:i="http://imobiliaria.org"
+           targetNamespace="http://imobiliaria.org"
+           elementFormDefault="qualified">
+
+    <xs:complexType name="tipoProprietario">
+        <xs:sequence>
+            <xs:element name="nome" type="xs:string"/>
+
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="telefone" type="xs:string"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoEndereco">
+        <xs:sequence>
+            <xs:element name="rua" type="xs:string"/>
+            <xs:element name="bairro" type="xs:string"/>
+            <xs:element name="cidade" type="xs:string"/>
+            <xs:element name="número" type="xs:integer" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoCaracteristicas">
+        <xs:sequence>
+            <xs:element name="tamanho" type="xs:decimal"/>
+            <xs:element name="numQuartos" type="xs:integer"/>
+            <xs:element name="numBanheiros" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoImovel">
+        <xs:sequence>
+            <xs:element name="descricao" type="xs:string"/>
+            <xs:element name="proprietario" type="i:tipoProprietario"/>
+            <xs:element name="endereco" type="i:tipoEndereco"/>
+            <xs:element name="caracteristicas" type="i:tipoCaracteristicas"/>
+            <xs:element name="valor" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="imobiliária">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="imovel"
+                            type="i:tipoImovel"
+                            minOccurs="1"
+                            maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
