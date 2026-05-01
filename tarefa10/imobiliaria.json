@@ -1,0 +1,120 @@
+[
+    {
+        "descricao": "Casa confortável com quintal espaçoso e área para churrasco",
+        "proprietario": {
+            "nome": "André Luiz Pereira",
+            "telefones": [
+                "98112-3456",
+                "98743-2109"
+            ],
+            "emails": [
+                "andre.pereira@email.com"
+            ]
+        },
+        "endereco": {
+            "rua": "Rua das Mangueiras",
+            "bairro": "Nova Descoberta",
+            "cidade": "Natal",
+            "numero": "152"
+        },
+        "caracteristicas": {
+            "tamanho": "210m²",
+            "numQuartos": "4",
+            "numBanheiros": "3"
+        },
+        "valor": "465000"
+    },
+    {
+        "descricao": "Apartamento bem iluminado, perto de farmácia, mercado e ponto de ônibus",
+        "proprietario": {
+            "nome": "Mariana Souza Alves",
+            "telefones": [
+                "98954-7781"
+            ],
+            "emails": []
+        },
+        "endereco": {
+            "rua": "Avenida Lima e Silva",
+            "bairro": "Lagoa Nova",
+            "cidade": "Natal",
+            "numero": null
+        },
+        "caracteristicas": {
+            "tamanho": "88m²",
+            "numQuartos": "2",
+            "numBanheiros": "2"
+        },
+        "valor": "298000"
+    },
+    {
+        "descricao": "Casa simples e aconchegante, ideal para família pequena",
+        "proprietario": {
+            "nome": "Carlos Henrique Gomes",
+            "telefones": [
+                "97661-8820"
+            ],
+            "emails": [
+                "carloshg@email.com"
+            ]
+        },
+        "endereco": {
+            "rua": "Rua São Vicente",
+            "bairro": "Planalto",
+            "cidade": "Natal",
+            "numero": "74"
+        },
+        "caracteristicas": {
+            "tamanho": "135m²",
+            "numQuartos": "3",
+            "numBanheiros": "2"
+        },
+        "valor": "215000"
+    },
+    {
+        "descricao": "Apartamento compacto em região central, bom para morar ou investir",
+        "proprietario": {
+            "nome": "Juliana Medeiros Costa",
+            "telefones": [
+                "98440-1198"
+            ],
+            "emails": [
+                "juliana.medeiros@email.com"
+            ]
+        },
+        "endereco": {
+            "rua": "Rua Apodi",
+            "bairro": "Tirol",
+            "cidade": "Natal",
+            "numero": "233"
+        },
+        "caracteristicas": {
+            "tamanho": "62m²",
+            "numQuartos": "1",
+            "numBanheiros": "1"
+        },
+        "valor": "172000"
+    },
+    {
+        "descricao": "Casa ampla com varanda, jardim na frente e ótima ventilação",
+        "proprietario": {
+            "nome": "Roberto Fernandes Lima",
+            "telefones": [
+                "97555-4433",
+                "97123-8890"
+            ],
+            "emails": []
+        },
+        "endereco": {
+            "rua": "Rua das Oliveiras",
+            "bairro": "Candelária",
+            "cidade": "Natal",
+            "numero": null
+        },
+        "caracteristicas": {
+            "tamanho": "275m²",
+            "numQuartos": "4",
+            "numBanheiros": "3"
+        },
+        "valor": "640000"
+    }
+]
