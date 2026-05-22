@@ -37,7 +37,7 @@ def update(user_id, user_data):
 
 def delete(user_id):
     response = requests.delete(f"{API_URL}/users/{user_id}")
-    if response.status_code == 200 or response.status_code == 204:
+    if response.status_code == 204:
         return True
 
     return False
