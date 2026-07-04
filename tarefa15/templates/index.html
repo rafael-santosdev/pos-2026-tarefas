@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Início - Painel SUAP{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-texto">
+        <span class="tag">Integração com SUAP IFRN</span>
+
+        <h1>Consulte seu perfil e boletim em um só lugar</h1>
+
+        <p>
+            Este sistema utiliza autenticação OAuth para acessar informações do aluno
+            no SUAP, exibindo dados pessoais, acadêmicos e boletim de forma organizada.
+        </p>
+
+        {% if not session.get("access_token") %}
+            <a class="botao-principal" href="{{ url_for('login') }}">
+                Entrar com SUAP
+            </a>
+        {% else %}
+            <a class="botao-principal" href="{{ url_for('perfil') }}">
+                Acessar meu painel
+            </a>
+        {% endif %}
+    </div>
+</section>
+
+<section class="cards">
+    <div class="card">
+        <h2>Login OAuth</h2>
+        <p>O usuário entra usando sua própria conta do SUAP.</p>
+    </div>
+
+    <div class="card">
+        <h2>Perfil</h2>
+        <p>Exibe nome, matrícula, foto e dados principais do aluno.</p>
+    </div>
+
+    <div class="card">
+        <h2>Boletim</h2>
+        <p>Permite consultar disciplinas, notas, faltas e situação por ano.</p>
+    </div>
+</section>
+{% endblock %}

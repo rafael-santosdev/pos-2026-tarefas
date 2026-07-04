@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Boletim - Painel SUAP{% endblock %}
+
+{% block content %}
+<h1>Boletim Acadêmico</h1>
+
+<form class="formulario" method="get" action="{{ url_for('boletim') }}">
+    <label for="ano">Ano letivo:</label>
+
+    <select name="ano" id="ano">
+        {% for item in anos %}
+            <option value="{{ item }}" {% if ano|string == item|string %}selected{% endif %}>
+                {{ item }}
+            </option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Buscar boletim</button>
+</form>
+
+{% if disciplinas %}
+    <div class="resumo-boletim">
+        <div>
+            <strong>{{ disciplinas|length }}</strong>
+            <span>disciplina(s) encontrada(s)</span>
+        </div>
+
+        <div>
+            <strong>{{ ano }}</strong>
+            <span>ano selecionado</span>
+        </div>
+    </div>
+
+    <section class="lista-disciplinas">
+        {% for disciplina in disciplinas %}
+            <div class="disciplina-card">
+                <h2>{{ disciplina.get("disciplina") or "Disciplina não informada" }}</h2>
+
+                <p><strong>Período:</strong> {{ disciplina.get("_periodo") }}º</p>
+                <p><strong>Código do diário:</strong> {{ disciplina.get("codigo_diario") or "-" }}</p>
+
+                <div class="notas-grid">
+                    <div>
+                        <span>Etapa 1</span>
+                        <strong>{{ disciplina.get("nota_etapa_1", {}).get("nota") or "-" }}</strong>
+                    </div>
+
+                    <div>
+                        <span>Etapa 2</span>
+                        <strong>{{ disciplina.get("nota_etapa_2", {}).get("nota") or "-" }}</strong>
+                    </div>
+
+                    <div>
+                        <span>Etapa 3</span>
+                        <strong>{{ disciplina.get("nota_etapa_3", {}).get("nota") or "-" }}</strong>
+                    </div>
+
+                    <div>
+                        <span>Etapa 4</span>
+                        <strong>{{ disciplina.get("nota_etapa_4", {}).get("nota") or "-" }}</strong>
+                    </div>
+                </div>
+
+                <p><strong>Média final:</strong> {{ disciplina.get("media_final_disciplina") or disciplina.get("media_disciplina") or "-" }}</p>
+                <p><strong>Faltas:</strong> {{ disciplina.get("numero_faltas") or "-" }}</p>
+                <p><strong>Situação:</strong> {{ disciplina.get("situacao") or "-" }}</p>
+
+                <details>
+                    <summary>Ver dados completos da API</summary>
+
+                    <table>
+                        <tbody>
+                            {% for chave, valor in disciplina.items() %}
+                                <tr>
+                                    <td>{{ chave }}</td>
+                                    <td><pre>{{ valor|mostrar }}</pre></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </details>
+            </div>
+        {% endfor %}
+    </section>
+{% else %}
+    <div class="sem-dados">
+        Nenhum boletim encontrado para o ano {{ ano }}.
+    </div>
+{% endif %}
+{% endblock %}

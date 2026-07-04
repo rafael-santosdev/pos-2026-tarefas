@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Perfil - Painel SUAP{% endblock %}
+
+{% block content %}
+
+{% set campos_ocultos = [
+    "cpf",
+    "rg",
+    "numero_rg",
+    "data_nascimento",
+    "passaporte",
+    "titulo_eleitor",
+    "nome_mae",
+    "nome_pai",
+    "naturalidade",
+    "endereco",
+    "logradouro",
+    "bairro",
+    "cep",
+    "telefone",
+    "celular"
+] %}
+
+<h1>Perfil do Usuário</h1>
+
+<section class="perfil-topo">
+    <div>
+        {% if usuario_nav and usuario_nav.get("foto") %}
+            <img class="foto-perfil" src="{{ usuario_nav.get('foto') }}" alt="Foto do usuário">
+        {% else %}
+            <div class="foto-placeholder">Sem foto</div>
+        {% endif %}
+    </div>
+
+    <div>
+        <h2>{{ usuario_nav.get("nome") if usuario_nav else "Usuário" }}</h2>
+
+        <p>
+            <strong>Matrícula:</strong>
+            {{ usuario_nav.get("matricula") if usuario_nav else "Não informado" }}
+        </p>
+
+        <p>
+            <strong>Curso:</strong>
+            {{ aluno.get("curso") or "Não informado" }}
+        </p>
+
+        <p>
+            <strong>Situação:</strong>
+            {{ aluno.get("situacao") or "Não informado" }}
+        </p>
+
+        <p>
+            <strong>IRA:</strong>
+            {{ aluno.get("ira") or "Não informado" }}
+        </p>
+    </div>
+</section>
+
+<section class="duas-colunas">
+    <div class="painel">
+        <h2>Dados pessoais</h2>
+
+        <table>
+            <tbody>
+                {% for chave, valor in perfil.items() %}
+                    {% if chave|lower not in campos_ocultos %}
+                        <tr>
+                            <td>{{ chave }}</td>
+                            <td><pre>{{ valor|mostrar }}</pre></td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="painel">
+        <h2>Dados acadêmicos</h2>
+
+        <table>
+            <tbody>
+                {% for chave, valor in aluno.items() %}
+                    {% if chave|lower not in campos_ocultos %}
+                        <tr>
+                            <td>{{ chave }}</td>
+                            <td><pre>{{ valor|mostrar }}</pre></td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}

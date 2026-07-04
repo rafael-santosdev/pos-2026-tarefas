@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Painel SUAP{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        Painel SUAP
+    </div>
+
+    <div class="menu">
+        <a href="{{ url_for('index') }}">Início</a>
+
+        {% if session.get("access_token") %}
+            <a href="{{ url_for('perfil') }}">Perfil</a>
+            <a href="{{ url_for('boletim') }}">Boletim</a>
+
+            <div class="usuario-navbar">
+                {% if usuario_nav and usuario_nav.get("foto") %}
+                    <img src="{{ usuario_nav.get('foto') }}" alt="Avatar">
+                {% else %}
+                    <div class="avatar-letra">
+                        {{ usuario_nav.get("nome", "U")[0] if usuario_nav else "U" }}
+                    </div>
+                {% endif %}
+
+                <div>
+                    <strong>{{ usuario_nav.get("nome") if usuario_nav else "Usuário" }}</strong>
+                    <small>{{ usuario_nav.get("matricula") if usuario_nav else "" }}</small>
+                </div>
+            </div>
+
+            <a class="btn-sair" href="{{ url_for('logout') }}">Sair</a>
+        {% else %}
+            <a class="btn-login" href="{{ url_for('login') }}">Entrar com SUAP</a>
+        {% endif %}
+    </div>
+</nav>
+
+<main class="container">
+    {% with mensagens = get_flashed_messages(with_categories=true) %}
+        {% if mensagens %}
+            {% for categoria, mensagem in mensagens %}
+                <div class="alert {{ categoria }}">
+                    {{ mensagem }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+</main>
+
+</body>
+</html>
